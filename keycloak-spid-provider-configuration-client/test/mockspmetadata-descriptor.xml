@@ -1,0 +1,24 @@
+<md:EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+                     xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+                     entityID="https://quickstart-kc-spide6.okd-entando.org/auth/realms/entando"
+                     ID="ID_2db12d92-0e02-4a71-8e6b-c2e09b5f0487">
+    <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" AuthnRequestsSigned="true"
+                        WantAssertionsSigned="false">
+        <md:KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:KeyName>MFy6scGcsrN-WHIsLv3TNXmidKmfdVbeifil2zbjHTo</ds:KeyName>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+                        MIICnTCCAYUCBgF24cCl4zANBgkqhkiG9w0BAQsFADASMRAwDgYDVQQDDAdlbnRhbmRvMB4XDTIxMDEwODExMjYwN1oXDTMxMDEwODExMjc0N1owEjEQMA4GA1UEAwwHZW50YW5kbzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJFuGVqOE/9m0kGyKe9GzgwWCkxd+cU79NphsDYj8hx8nTXKS2FGOY9UOvIpaU885Ot7fW+UBN+y2Hb4hIvv7ReYXUh3qSdZqOlfTs6Yp+vWWJ3GOviJ1+hOJsv+li7pCkZlFQUo1M1C6NP8yaIzK1A9ZmkqTTl6SPufBVPA3f/MHMvnZ/uwi8lrVhBuLpP4FRjzaBls1l1k6Qu0qAMU6I69Ij9r05jOvry11cmweZd74mzr152o+HzcK4+k+vvOTPj74Nj/vGjUAmThi9fdmmuCavJXB3Ri7EvH7gvmGin9GWkj7sM3rekM+D6gFd4yoH3XZuX4RvwLZ8T2PZmngK8CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEATXjkYlLnjxX0AnNieRvNGH9jZwXEedrxOP6kK7QJLuJZ9GdPYzufofHFcxYrFxVm/5LKI6c1Ln3aI41dbGaOfBLPA0twHwuaHQP67xdIM5IcJfFPlrjAEkN+rrEcFAUfq9JygGD41GXYB8KsKXJBRayZQ0W6bgweqWbPWS8zqLXEvlGcTb0xJOvxu7FQYn2nuifBMeQpC3jdQLrMeAwQuB15gN10gfEC9aa9e8ZIJ3p6vynV0sneBpct3fWTV5NxKsMc/BKQlsbgxXz5WGWv4wM+MFILHQyVEqTxS6gNpH0JVqGYlHIW+aJdskpEdz7DG1KPUKsTCPwhlIwcvAf9CQ==
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </md:KeyDescriptor>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                                Location="https://quickstart-kc-spide6.okd-entando.org/auth/realms/entando/broker/Lepida%20ID/endpoint"/>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+        <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                                     Location="https://quickstart-kc-spide6.okd-entando.org/auth/realms/entando/broker/Lepida%20ID/endpoint"
+                                     isDefault="true" index="1"/>
+    </md:SPSSODescriptor>
+</md:EntityDescriptor>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keycloak Test</title>
+    <script src="http://kc-local-test:8080/auth/js/keycloak.js"></script>
+<!--    <script src="http://quickstart-kc-entando-demo.192.168.64.5.nip.io/auth/js/keycloak.js"></script>-->
+</head>
+<body>
+<script>
+    var keycloak = new Keycloak('keycloak-local.json');
+    keycloak.init().success(function (authenticated) {
+        alert(authenticated ? 'authenticated' : 'not authenticated');
+    }).error(function () {
+        alert('failed to initialize');
+    });
+
+
+</script>
+
+<button onclick="keycloak.login()">LOGIN</button>
+<button onclick="keycloak.logout()">LOGOUT</button>
+</body>
+</html>

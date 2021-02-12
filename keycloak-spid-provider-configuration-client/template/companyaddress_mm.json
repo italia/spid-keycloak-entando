@@ -1,0 +1,11 @@
+{
+    "Address": "Company Address",
+    "identityProviderAlias": "CHANGE-IT",
+    "identityProviderMapper": "spid-user-attribute-idp-mapper",
+    "config": {
+        "syncMode": "INHERIT",
+        "user.attribute": "spid-registeredOffice",
+        "attribute": "registeredOffice",
+        "attribute.Address": "registeredOffice"
+    }
+}

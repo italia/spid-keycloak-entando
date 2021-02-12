@@ -1,0 +1,7 @@
+{
+  "realm": "entando",
+  "auth-server-url": "http://kc-local-test:8080/auth",
+  "ssl-required": "external",
+  "resource": "broker",
+  "public-client": true
+}
