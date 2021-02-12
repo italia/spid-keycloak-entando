@@ -10,12 +10,12 @@ It allows the configuration of a keycloak instance with the https://github.com/l
 npm install
 ```
 
-copy .env-example into .env, configure it and wipe out the comments
+copy .env-example into .env, configure it and wipe out the comments (check .env-local and .env-remote for hints)
 
 ```
 npm run create-realm 
 ```
-builds a pre configured realm (with the right Authenticator)
+builds a pre configured realm (with the right Authenticator) **'WARNING: DON'T USE IT FOR ENTANDO PLATFORM KEYCLOAK BUT ONLY FOR STANDALONE INSTALLATIONS'**
 
 ```
 npm run create-idps
