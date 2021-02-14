@@ -10,7 +10,7 @@ Easily allow users to use Italian SPID identity providers (https://www.spid.gov.
 
 ### The solution
 
-![big picture](images/entando-architectural-sketches-Entando IAM.png)
+![big picture](images/entando-architectural-sketches-Entando-IAM.png)
 
 The main solution points are:
 1. using keycloak for Identity Brokering (https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker)
