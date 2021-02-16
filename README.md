@@ -9,8 +9,6 @@ To easily allow users to use Italian SPID identity providers (https://www.spid.g
 
 
 ### The solution
-It is based on conf
-
 ![big picture](images/entando-architectural-sketches-Entando-IAM.png)
 
 The solution key steps are:
