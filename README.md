@@ -1,14 +1,15 @@
 ## Entando SPID Integration
 
-The context
+### The context
 Entando (https://www.entando.com/) is a modern platform that enables fast development of applications in cloud native scenarios, leveraging best practices for software application architecture and development.
 It uses keycloak (https://www.keycloak.org/) as identity access manager
 
-The needs
+### The needs
 To easily allow users to use Italian SPID identity providers (https://www.spid.gov.it/) to authenticate themselves in Entando applications 
 
 
 ### The solution
+It is based on conf
 
 ![big picture](images/entando-architectural-sketches-Entando-IAM.png)
 
