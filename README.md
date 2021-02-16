@@ -1,28 +1,28 @@
 ## Entando SPID Integration
 
-### The context
-Entando (https://www.entando.com/) is a modern platform for developing application in cloud native scenarios, using best practices for the software application architecture and development.
+The context
+Entando (https://www.entando.com/) is a modern platform that enables fast development of applications in cloud native scenarios, leveraging best practices for software application architecture and development.
 It uses keycloak (https://www.keycloak.org/) as identity access manager
 
-### The needs
-Easily allow users to use Italian SPID identity providers (https://www.spid.gov.it/) to authenticate themselves in Entando applications 
+The needs
+To easily allow users to use Italian SPID identity providers (https://www.spid.gov.it/) to authenticate themselves in Entando applications 
 
 
 ### The solution
 
 ![big picture](images/entando-architectural-sketches-Entando-IAM.png)
 
-The main solution points are:
-1. using keycloak for Identity Brokering (https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker)
+The solution key steps are:
+1. Use of keycloak for Identity Brokering (https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker)
    - This allows Entando to continue using Keycloak as the only IAM   
-2. create a new Entando Keycloack Image with the SPID Identity Provider Type (https://github.com/lscorcia/keycloak-spid-provider) and a new spid theme, containing the official discovery button. 
+2. Create a new Entando Keycloack Image with the SPID Identity Provider Type (https://github.com/lscorcia/keycloak-spid-provider) and a new spid theme, containing the official discovery button. 
    - That new type will be used in the configuration phase of the Identity Brokering
-4. patch the entando installation .yaml with the new entando keycloak image
+4. Patch the entando installation .yaml with the new entando keycloak image
    - Entando is a cloud native platform composed of many collaborating docker containers.
-   You can find the complete images list for one release, in this case the 6.3.0, there https://raw.githubusercontent.com/entando/entando-releases/v6.3.0/dist/qs/entando.yaml (look for `# Source: preview/charts/operator/templates/docker-image-info-configmap.yaml`)
-   patch that with the new keycloak image and follow https://dev.entando.org/v6.3/docs/getting-started/#manual-install for the installation steps  
-5. configure keycloak with the spid Identity Providers
-   - We can use the keycloack spid provider configuration client to avoid manually do it (https://github.com/lscorcia/keycloak-spid-provider/wiki) 
+   You can find the complete images list for one release, in this case the 6.3.0, at the address https://raw.githubusercontent.com/entando/entando-releases/v6.3.0/dist/qs/entando.yaml (look for `# Source: preview/charts/operator/templates/docker-image-info-configmap.yaml`)
+   patch the above with the new keycloak image and follow the installation steps at the following address https://dev.entando.org/v6.3/docs/getting-started/#manual-install for the installation steps  
+5. Configure keycloak with the spid Identity Providers
+   - You can use the keycloack spid provider configuration client in order to avoid do it manually (https://github.com/lscorcia/keycloak-spid-provider/wiki) 
 
 
 
@@ -34,14 +34,14 @@ The main solution points are:
 Switch to keycloack-image folder and follow the README instructions, deploy the image to a dockerhub
 
 ### 2. Patch the Entando installation
-Follow the instructions there https://dev.entando.org/next/docs/getting-started/#manual-install up to "Download Helm Chart" section
+Follow the instructions at the url https://dev.entando.org/next/docs/getting-started/#manual-install up to "Download Helm Chart" section
 after `curl -L -C - -O https://raw.githubusercontent.com/entando/entando-releases/v6.3.0/dist/qs/entando.yaml` open the entando.yaml file and change the keycloak image: `entando-keycloak: >-
-{"version":"6.3.1","executable-type":"jvm","registry":"docker.io","organization":"entando"}` to whatever you have deployed to dockerhub
+{"version":"6.3.1","executable-type":"jvm","registry":"docker.io","organization":"entando"}` to wherever you have deployed to dockerhub
 continue with the original installation
 
 ### 3. Configure keycloak
 In this step you are going to use the keycloak-spid-provider-configuration-client, check the README file in the folder for details
-Unfortunately currently you cannot use the create-realm npm run command, when keycloak is already deployed in Entando, so you have to go through a single step in the manual configuration: https://github.com/lscorcia/keycloak-spid-provider/wiki/Configuring-the-Authentication-Flow
+Unfortunately you cannot currently use the create-realm npm run command, when keycloak is already deployed in Entando, so you have to go through a single step in the manual configuration: https://github.com/lscorcia/keycloak-spid-provider/wiki/Configuring-the-Authentication-Flow
 N.B.: Pay attention to the name of the newly created Identity Provider
 After that you can use the other npm run commands: create-idps, create-spmetadata
 N:B:: There is some issue with the spid-testenv2 certificate, so you might be forced to disable the signature validation for that identity provider
