@@ -9,6 +9,9 @@ To easily allow users to use Italian SPID identity providers (https://www.spid.g
 
 
 ### The solution
+**Entando uses keycloak as its own platform IAM, so the solution is based on configuring keycloak identity brokering modules to mimic a OIDC2SPID proxy.
+Indeed the following keycloak configuration principles can be used as the foundation for integrating SPID in other scenarios, where Entando is not present but keycloak is.**    
+
 ![big picture](images/entando-architectural-sketches-Entando-IAM.png)
 
 The solution key steps are:
