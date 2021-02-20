@@ -1,11 +1,12 @@
 {
   "name": "spid-client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A client for configuring a keycloak spid provider patched installation",
   "main": "createidPs.js",
   "scripts": {
     "create-realm": "node ./createrealm.js > log/create-realm.log",
     "create-idps": "node ./createidps.js > log/create-idps.log",
+    "copy-authentication-flow": "node ./copyauthenticationflow.js > log/copy-authentication-flow.log",
     "create-spmetadata": "node ./createspmetadata.js > log/create-spmetadata.log",
     "test": "jest"
   },

@@ -207,3 +207,23 @@ const httpCallKeycloakCreateMapper = function (idPAlias, mapperModel) {
             });
     })
 }
+
+exports.httpCallKeycloakCopyAuthentication = function () {
+  return httpGrabKeycloaktoken().then(token => {
+    const body = {"newName":"first broker login (SPID)"}
+    let data = JSON.stringify(body);
+    let axiosConfig = {
+      method: 'post',
+      url: config.keycloakServerBaseURL + '/auth/admin/realms/' + config.realm + '/authentication/flows/first%20broker%20login/copy',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+    return axios(axiosConfig)
+      .catch(function (error) {
+        console.log(error);
+      });
+  })
+}

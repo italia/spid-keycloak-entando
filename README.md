@@ -44,9 +44,9 @@ continue with the original installation
 ### 3. Configure keycloak
 In this step you are going to use the keycloak-spid-provider-configuration-client, check the README file in the folder for details
 Unfortunately you cannot currently use the create-realm npm run command, when keycloak is already deployed in Entando, so you have to go through a single step in the manual configuration: https://github.com/lscorcia/keycloak-spid-provider/wiki/Configuring-the-Authentication-Flow
-N.B.: Pay attention to the name of the newly created Identity Provider
+**N.B.: Starting from 1.0.2 version you can use npm run copy-authentication-flow, to automatically clone the First Broker Login Authentication Flow, with the right name.**  
 After that you can use the other npm run commands: create-idps, create-spmetadata
-N:B:: There is some issue with the spid-testenv2 certificate, so you might be forced to disable the signature validation for that identity provider
+N:B:: There is some issue with the spid-testenv2 certificate, so you might be forced to disable the signature validation for that identity provider.
 Change the realm theme to spid
 
 ### 4. Configure the test idps spid-testenv2
